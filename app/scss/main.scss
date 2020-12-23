@@ -1,0 +1,26 @@
+@import "./config";
+
+.header {
+  background-color: #000;
+  &__wrapper {
+    text-align: center;
+    margin: 0 auto;
+    padding: 250px 25px 120px 25px;
+    @include media("<=LGdesktop") {
+      padding: 100px 25px 57px 25px;
+    }
+    @include media("<=phone") {
+      padding: 30px 25px 13px 25px;
+    }
+  }
+  &__logo {
+    width: 100%;
+    max-width: 1470px;
+    @include media("<=LGdesktop") {
+      width: 70%;
+    }
+    @include media("<=phone") {
+      width: 151px;
+    }
+  }
+}

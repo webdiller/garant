@@ -1,0 +1,93 @@
+@import './_vars.scss';
+@import './_mixins.scss';
+@include font('MontserratAlternatesDev', normal, 500, '../fonts/montserrat/MontserratAlternates-Medium.woff2');
+@include font('MontserratAlternatesDev', normal, 700, '../fonts/montserrat/MontserratAlternates-Bold.woff2');
+// GENERAL DOCUMENT STYLES
+
+* {
+  box-sizing: border-box;
+}
+
+::placeholder {
+  color: #666;
+}
+
+::selection {
+  background-color: $accent;
+  color: #fff;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+
+
+input,
+textarea {
+  outline: none;
+  &:focus:required:invalid {
+    border-color: red;
+  }
+  &:required:valid {
+    border-color: green;
+  }
+}
+
+input {
+  -moz-appearance: textfield;
+  box-sizing: border-box;
+  &::placeholder {
+    font-size: 16px;
+  }
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+
+html {
+  font-size: $fontsize;
+  scroll-behavior: smooth;
+}
+
+a:hover {
+  color: currentColor;
+}
+
+body {
+  margin: 0;
+  font-family: $montserrat, sans-serif;
+  font-size: $fontsize;
+  font-weight: 400;
+  min-width: 320px;
+  position: relative;
+  line-height: 1.65;
+  overflow-x: hidden;
+  background-color: $background;
+  color: $text;
+}
+
+textarea,
+input,
+button {
+  font-family: $montserrat, sans-serif;
+  font-size: 14px;
+  &::placeholder {
+    font-size: 14px;
+  }
+}

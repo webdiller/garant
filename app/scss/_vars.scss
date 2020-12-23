@@ -1,0 +1,17 @@
+
+$breakpoints: (
+    'phone': 418px,
+    'tablet': 768px,
+    'desktop': 991px,
+    'LGdesktop': 1920px,
+    '4K': 2560px,
+) !default;
+
+$fontsize: 14px; 
+$system: -apple-system, BlinkMacSystemFont, Arial, sans-serif; 
+$montserrat: 'MontserratAlternatesDev',  -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+$accent: #1C69D4; 
+$invalid: #FF3D01; 
+$valid: #58E204; 
+$text: #1f2235; 
+$background: #fff; 
