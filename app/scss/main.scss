@@ -1,26 +1,1769 @@
-@import "./config";
+@import './config';
 
+// header
 .header {
-  background-color: #000;
   &__wrapper {
-    text-align: center;
     margin: 0 auto;
-    padding: 250px 25px 120px 25px;
-    @include media("<=LGdesktop") {
-      padding: 100px 25px 57px 25px;
-    }
-    @include media("<=phone") {
-      padding: 30px 25px 13px 25px;
+    padding: 23px 50px 22px 34px;
+    display: flex;
+    align-items: center;
+    max-height: 88px;
+    background-color: #fff;
+    @include media('<=LGdesktop') {
+      padding: 20px;
     }
   }
-  &__logo {
-    width: 100%;
-    max-width: 1470px;
-    @include media("<=LGdesktop") {
-      width: 70%;
+  &__logo-link {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    margin-right: auto;
+  }
+  &__logo-head {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__logo-title {
+    font-family: 'SansationDev';
+    font-size: 30px;
+    line-height: 27px;
+    text-transform: uppercase;
+    &:first-child {
+      margin-right: 10px;
+      color: #1bd7d7;
     }
-    @include media("<=phone") {
-      width: 151px;
+    &:last-child {
+      color: #000;
+    }
+  }
+  &__logo-footer {
+    margin-top: 5px;
+    font-family: 'RobotoDev';
+    font-weight: 400;
+    font-size: 13.86px;
+    line-height: 16px;
+    color: #000;
+  }
+  &__nav {
+    margin-right: 110px;
+  }
+  &__nav-item {
+    @include reset-link();
+    margin-right: 45px;
+    font-family: 'RubikDev';
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  &__contact {
+    display: flex;
+  }
+  &__contact-socials {
+    margin-top: auto;
+    display: flex;
+    margin-right: 21px;
+  }
+  &__contact-wa {
+    margin-right: 13px;
+    height: 26px;
+  }
+  &__contact-vb {
+    height: 26px;
+  }
+  &__contact-email-and-phone {
+    @include reset-link();
+    padding-right: 32px;
+    margin-right: 29px;
+    border-right: 1px solid #c6c6c6;
+  }
+  &__contact-mail {
+    @include reset-link(#000);
+    display: block;
+    font-family: 'ProximaNovaDev';
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: right;
+    margin-bottom: 5px;
+    padding-left: 15px;
+  }
+  &__contact-phones {
+    position: relative;
+    display: block;
+    &::before {
+      content: '';
+      position: absolute;
+      width: 13px;
+      height: 7px;
+      right: -5px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: url('../images/dest/arrow-down.svg') no-repeat center / contain;
+      cursor: pointer;
+    }
+  }
+  &__contact-phone {
+    @include reset-link(#000);
+    font-family: 'RubikDev';
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    padding-right: 13px;
+  }
+  &__contact-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    width: calc(100% + 20px);
+    padding: 10px;
+    background-color: #fff;
+
+    opacity: 0;
+    visibility: hidden;
+    z-index: -1;
+    transition: all 0.3s ease;
+    &.active {
+      visibility: visible;
+      opacity: 1;
+      z-index: 10;
+    }
+  }
+  &__contact-dropphone {
+    @include reset-link(#000);
+    display: block;
+    font-family: 'RubikDev';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21px;
+    padding-right: 13px;
+    &:first-child {
+      margin-bottom: 5px;
+    }
+  }
+  &__contact-modal {
+    @include reset-btn();
+    font-family: 'RubikDev';
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+    text-decoration-line: underline;
+    color: #00cbb3;
+  }
+}
+
+// breadcrumbs
+.breadcrumbs {
+  background: #f1f8fb;
+  &__wrapper {
+    padding: 0 25px 0 25px;
+    max-width: 1195px;
+    margin: 0 auto 33px auto;
+  }
+  &__list {
+    padding: 14px 0 30px 0;
+    a {
+      @include reset-link();
+      position: relative;
+      font-family: 'RobotoDev';
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 20px;
+      color: #000000;
+      &::after {
+        content: '>';
+        position: relative;
+        margin: 0 2px 0 4px;
+      }
+    }
+    span {
+    }
+  }
+  &__title {
+    display: inline-block;
+    margin-right: 10px;
+    padding-bottom: 19px;
+    font-family: 'RubikDev';
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 43px;
+    color: #47aae3;
+    border-bottom: 3px solid #47aae3;
+    @include media('<=desktop') {
+      font-size: 26px;
+      line-height: 1.55;
+    }
+    @include media('<=tablet') {
+      font-size: 20px;
+    }
+    @include media('<=phone') {
+      font-size: 18px;
+    }
+  }
+}
+
+// promo
+.promo {
+  &__wrapper {
+    position: relative;
+    height: 950px;
+  }
+  &__img {
+    position: absolute;
+    width: 47%;
+    height: 100%;
+    object-fit: cover;
+    &_left {
+      top: 0;
+      left: 0;
+    }
+    &_right {
+      top: 0;
+      right: 0;
+    }
+  }
+  &__block {
+    position: absolute;
+    top: 130px;
+    left: 27.5%;
+    display: flex;
+  }
+  &__left {
+    padding: 25px 60px 40px 60px;
+    background-color: #fff;
+    margin-right: 10px;
+    box-shadow: 0px 0px 39.1535px rgba(0, 0, 0, 0.25);
+  }
+  &__title {
+    font-family: 'RubikDev';
+    font-weight: 300;
+    font-size: 93.0034px;
+    line-height: 110px;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    color: #000000;
+    margin-bottom: 15px;
+  }
+  &__subtitle {
+    margin-bottom: 20px;
+    font-family: 'RubikDev';
+    font-weight: 300;
+    font-size: 36px;
+    line-height: 39px;
+    color: #11c2c2;
+    span {
+      display: block;
+    }
+  }
+  &__link {
+    @include reset-link(#fff);
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 32px;
+    width: 253px;
+    height: 60px;
+    background-color: #11c2c2;
+    font-family: 'RubikDev';
+    font-weight: 400;
+    font-size: 15.3543px;
+    line-height: 18px;
+    text-transform: uppercase;
+    &::before {
+      content: '';
+      position: absolute;
+      width: 24px;
+      height: 10px;
+      right: 40px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: url('../images/dest/Arrow.svg') no-repeat center / contain;
+    }
+  }
+  &__right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 110px;
+    height: 110px;
+    background: #47aae3;
+    &-img {
+    }
+  }
+}
+
+// uslugi
+.uslugi {
+  background-color: #fff;
+  &__wrapper {
+    position: relative;
+    left: 40px;
+    max-width: 1208px;
+    margin: 0 auto;
+    padding: 55px 20px 60px 20px;
+  }
+  &__title {
+    flex: 1 1 100%;
+    margin-bottom: 23px;
+    font-family: 'RubikDev';
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 43px;
+    text-transform: uppercase;
+    color: #11c2c2;
+  }
+  &__items {
+    display: flex;
+  }
+  &__left {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 0 1 calc(581px + 10px);
+    margin-right: 10px;
+    .uslugi__item {
+      &:first-child {
+        flex: 1 1 100%;
+        margin-bottom: 21px;
+        min-height: 445px;
+        padding: 40px 100px 45px 40px;
+        background-color: #f1f8fc;
+        img {
+          right: 0;
+        }
+      }
+    }
+  }
+  &__item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 calc(50% - 10px);
+    overflow: hidden;
+    &_sm {
+      height: 263px;
+      background-color: #f1f8fc;
+      &:nth-child(2) {
+        margin-right: 10px;
+      }
+      &:nth-child(3) {
+        margin-left: 10px;
+      }
+    }
+    &_wide {
+      width: 100%;
+      flex: 1 1 100%;
+      margin-left: 0;
+      margin-right: 0;
+    }
+    &_green {
+      background: rgba(17, 194, 194, 0.71);
+    }
+    &_blue {
+      background: #48aee8;
+    }
+  }
+  &__item-title {
+    position: relative;
+    z-index: 10;
+    font-family: 'RubikDev';
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 30px;
+    text-align: left;
+    max-width: 430px;
+    margin-bottom: 15px;
+    &_white {
+      color: #fff;
+    }
+  }
+  &__item-title-center {
+    position: relative;
+    z-index: 10;
+    padding: 18px 27px 30px 30px;
+    text-align: center;
+    font-family: 'RubikDev';
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 30px;
+    text-align: center;
+    color: #000000;
+  }
+  &__right {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    flex: 0 1 calc(564px + 10px);
+    .uslugi__item {
+      padding: 39px 30px 40px 38px;
+      &:first-child {
+        max-height: 172px;
+        margin-bottom: 15px;
+        img {
+          top: -75%;
+          transform: unset;
+          right: 0;
+          height: 200%;
+        }
+      }
+      &:nth-child(2) {
+        max-height: 389px;
+        margin-bottom: 20px;
+        img {
+          right: 0;
+        }
+      }
+      ul li {
+        color: #fff;
+      }
+      a {
+        color: #aff0f0;
+      }
+    }
+    button {
+      @include reset-btn();
+      position: relative;
+      font-family: 'RubikDev';
+      display: flex;
+      flex: 1 1 auto;
+      align-items: center;
+      padding-left: 48px;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 30px;
+      color: #000000;
+      border: 1px solid #000;
+      &::before {
+        content: '';
+        position: absolute;
+        width: 42px;
+        height: 22px;
+        right: 49px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: url('../images/dest/arrow-black.svg') no-repeat center / contain;
+      }
+    }
+  }
+  ul {
+    @include reset-ul();
+    position: relative;
+    z-index: 10;
+    li {
+      font-family: 'RubikDev';
+      font-style: normal;
+      font-weight: normal;
+      font-size: 18px;
+      line-height: 35px;
+      color: #515151;
+      span {
+        display: block;
+      }
+    }
+  }
+  a {
+    position: relative;
+    z-index: 10;
+    margin-top: auto;
+    font-family: 'RubikDev';
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    text-decoration-line: underline;
+    text-transform: uppercase;
+
+    color: #47aae3;
+  }
+  img {
+    position: absolute;
+    height: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  button {
+    position: relative;
+    z-index: 10;
+  }
+}
+
+.usluga-content {
+  &__wrapper {
+    padding: 0 25px 0 25px;
+    max-width: 1195px;
+    margin: 52px auto 60px auto;
+    @include media('<=desktop') {
+      margin: 100px auto 60px auto;
+    }
+  }
+  &__header {
+    position: relative;
+    margin-bottom: 75px;
+  }
+  &__card {
+    position: relative;
+    z-index: 10;
+    padding: 32px 32px 35px 34px;
+    max-width: 600px;
+    background: #ffffff;
+    box-shadow: 0px 0px 39.1535px rgba(0, 0, 0, 0.25);
+    @include media('<=desktop') {
+      margin: 0 auto;
+      top: 100px;
+    }
+    p {
+      margin-bottom: 30px;
+      font-family: 'RobotoDev';
+      font-style: normal;
+      font-weight: normal;
+      font-size: 18px;
+      line-height: 29px;
+      color: #000000;
+      @include media('<=desktop') {
+        font-size: 14px;
+      }
+    }
+    button {
+      @include reset-btn();
+      position: relative;
+      padding: 0 100px 0 30px;
+      height: 60px;
+      font-family: 'ProximaNovaDev';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 22px;
+      color: #ffffff;
+      background: #48ade7;
+      @include media('<=desktop') {
+        height: 50px;
+        font-size: 14px;
+      }
+      &::before {
+        content: '';
+        position: absolute;
+        width: 24px;
+        height: 10px;
+        right: 23px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: url('../images/dest/Arrow.svg') no-repeat center / contain;
+      }
+    }
+  }
+  &__descr {
+    font-family: 'RobotoDev';
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 29px;
+    color: #000000;
+    @include media('<=desktop') {
+      margin-top: 135px;
+    }
+  }
+  img {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    height: 396px;
+    width: 50%;
+    object-fit: cover;
+    @include media('<=desktop') {
+      right: 50%;
+      transform: translate(50%, -50%);
+      width: 100%;
+    }
+  }
+}
+
+// gallery
+.gallery {
+  background: #f1f8fb;
+  &__wrapper {
+    padding: 37px 20px 69px 20px;
+    max-width: 1290px;
+    margin: 60px auto 50px auto;
+  }
+  &__header {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 23px;
+  }
+  &__title {
+    font-family: 'RubikDev';
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 43px;
+    text-transform: uppercase;
+    color: #11c2c2;
+    margin-right: 25px;
+  }
+  &__descr {
+    font-family: 'ProximaNovaDev';
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 29px;
+    color: #747474;
+  }
+}
+
+// our-news
+.our-news {
+  background-color: #fff;
+  &__wrapper {
+    padding: 0 20px 0 20px;
+    max-width: 1290px;
+    margin: 65px auto 85px auto;
+  }
+  &__title {
+    font-family: 'RubikDev';
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 43px;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    color: #000000;
+    margin-bottom: 25px;
+  }
+  &__list {
+    display: flex;
+    @include media('<=tablet') {
+      flex-direction: column;
+    }
+  }
+  &__item {
+    display: flex;
+    flex: 0 1 calc(50%);
+    @include media('<=tablet') {
+      flex: 1 1 100%;
+    }
+    &:first-child {
+      margin-right: 50px;
+      @include media('<=tablet') {
+        margin-right: 0;
+        margin-bottom: 30px;
+      }
+      @include media('<=phone') {
+        margin-bottom: 15px;
+      }
+    }
+    div {
+      display: flex;
+      flex-direction: column;
+    }
+    img {
+      width: 230px;
+      height: 195px;
+      object-fit: cover;
+      margin-right: 22px;
+      @include media('<=LGdesktop') {
+        width: 125px;
+        height: 105px;
+        margin-right: 10px;
+      }
+      @include media('<=phone') {
+        width: 65px;
+        height: 65px;
+      }
+    }
+    p:first-child {
+      font-family: 'RubikDev';
+      font-weight: 500;
+      font-size: 22px;
+      line-height: 26px;
+      color: #434343;
+      margin-bottom: 11px;
+      @include media('<=LGdesktop') {
+        font-size: 16px;
+      }
+    }
+    p:nth-child(2) {
+      font-family: 'RubikDev';
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 23px;
+      color: #434343;
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      @include media('<=LGdesktop') {
+        font-size: 14px;
+      }
+    }
+    p:nth-child(3) {
+      margin-top: auto;
+    }
+    span {
+      font-family: 'RubikDev';
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 17px;
+      text-transform: uppercase;
+      color: #434343;
+      opacity: 0.8;
+      display: inline-block;
+      margin-right: 20px;
+    }
+    a {
+      font-family: 'RubikDev';
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 17px;
+      text-decoration-line: underline;
+      text-transform: capitalize;
+      color: #47aae3;
+    }
+  }
+}
+
+// about
+.about {
+  background-color: #fff;
+  &__wrapper {
+    padding: 0 20px 0 20px;
+    max-width: 1290px;
+    margin: 58px auto 56px auto;
+  }
+  &__content {
+  }
+  &__descr {
+    font-family: 'ProximaNovaDev';
+    font-size: 16px;
+    line-height: 27px;
+    text-align: justify;
+    color: #000000;
+    margin-bottom: 31px;
+    @include media('<=tablet') {
+      margin-bottom: 15px;
+    }
+    @include media('<=desktop') {
+      font-size: 14px;
+      line-height: 1.55;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+    strong {
+      font-weight: bold;
+    }
+  }
+  &__form-wrapper {
+    position: relative;
+    width: 60%;
+    float: right;
+    border: 1px solid #d6d6d6;
+    box-sizing: border-box;
+    padding: 30px 30px 45px 39px;
+    margin-left: 30px;
+    margin-bottom: 15px;
+    min-height: 407px;
+    @include media('<=LGdesktop') {
+      width: 40%;
+    }
+    @include media('<=desktop') {
+      width: 70%;
+      padding: 30px 20px;
+      float: none;
+      margin-bottom: 15px;
+      margin-left: auto;
+      margin-right: auto;
+      min-height: unset;
+    }
+    @include media('<=tablet') {
+      width: 100%;
+    }
+  }
+  &__form-img {
+    position: absolute;
+    bottom: 0;
+    right: -53px;
+    max-width: 343px;
+    @include media('<=LGdesktop') {
+      width: 40%;
+    }
+    @include media('<=desktop') {
+      display: none;
+    }
+  }
+  &__form-title {
+    font-family: 'ProximaNovaDev';
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 37px;
+    color: #00659e;
+    margin-bottom: 6px;
+    @include media('<=desktop') {
+      font-size: 18px;
+      line-height: 1.55;
+    }
+  }
+  &__form-descr {
+    font-family: 'ProximaNovaDev';
+    font-weight: normal;
+    font-size: 19px;
+    line-height: 23px;
+    color: #000000;
+    margin-bottom: 14px;
+    @include media('<=desktop') {
+      font-size: 14px;
+      line-height: 1.55;
+    }
+  }
+  &__footer {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 45px;
+    @include media('<=tablet') {
+      margin-top: 30px;
+    }
+    div {
+      display: flex;
+      align-items: center;
+      margin-right: 20px;
+      margin-bottom: 20px;
+      &:last-child {
+        margin-right: 0;
+      }
+      img {
+        margin-right: 16px;
+      }
+      p {
+        font-family: 'ProximaNovaDev';
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 21px;
+        color: #000000;
+        max-width: 175px;
+      }
+    }
+  }
+}
+
+// portfolio
+.portfolio {
+  &__wrapper {
+    padding: 0 25px 0 25px;
+    max-width: 1195px;
+    margin: 33px auto 120px auto;
+  }
+  &__title {
+    position: relative;
+    margin-bottom: 36px;
+    font-family: 'RubikDev';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 36px;
+    text-transform: uppercase;
+    padding-left: 33px;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+      width: 21px;
+      height: 5px;
+      background: #1bd7d7;
+    }
+    &:empty {
+      display: none;
+    }
+  }
+  &__description {
+    margin-bottom: 35px;
+    font-family: 'RobotoDev';
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 26px;
+    text-align: justify;
+    &:empty {
+      display: none;
+    }
+  }
+  &__list {
+    @include reset-ul();
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -12.5px 20px -12.5px;
+    @include media('<=desktop') {
+      margin: 0 -10px 0 -10px;
+    }
+    @include media('<=phone') {
+      margin: 0 -5px 0 -5px;
+    }
+  }
+  &__item {
+    margin: 0 12.5px 25px 12.5px;
+    flex: 0 1 calc(33.33% - 25px);
+    height: 274px;
+    @include media('<=desktop') {
+      margin: 0 10px 20px 10px;
+      flex: 0 1 calc(33.33% - 20px);
+      height: 230px;
+    }
+    @include media('<=tablet') {
+      flex: 0 1 calc(50% - 20px);
+    }
+    @include media('<=phone') {
+      margin: 0 5px 10px 5px;
+      flex: 0 1 calc(50% - 10px);
+      height: 125px;
+    }
+  }
+  &__link {
+  }
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  &__pagination {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 24px;
+  }
+}
+
+// pagination
+.pagination {
+  display: flex;
+  font-family: 'RubikDev';
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  @include media('<=tablet') {
+    font-size: 14px;
+  }
+  &__prev {
+    @include reset-btn();
+    @include reset-link();
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #bfbfbf;
+    &::before {
+      content: '';
+      position: absolute;
+      width: 15px;
+      height: 8px;
+      right: 50%;
+      top: 50%;
+      transform: translate(50%, -50%) rotate(180deg);
+      background: url('../images/dest/arrow-black.svg') no-repeat center / contain;
+    }
+    @include media('<=tablet') {
+      width: 35px;
+      height: 35px;
+    }
+  }
+  &__current {
+    @include reset-link();
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    color: #47aae3;
+    border: 1px solid #bfbfbf;
+    @include media('<=tablet') {
+      width: 35px;
+      height: 35px;
+    }
+  }
+  &__item {
+    @include reset-link();
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #bfbfbf;
+    @include media('<=tablet') {
+      width: 35px;
+      height: 35px;
+    }
+  }
+  &__dots {
+    @include reset-link();
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #bfbfbf;
+    @include media('<=tablet') {
+      width: 35px;
+      height: 35px;
+    }
+  }
+  &__next {
+    @include reset-link();
+    @include reset-btn();
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #bfbfbf;
+    &::before {
+      content: '';
+      position: absolute;
+      width: 15px;
+      height: 8px;
+      right: 50%;
+      top: 50%;
+      transform: translate(50%, -50%);
+      background: url('../images/dest/arrow-black.svg') no-repeat center / contain;
+    }
+    @include media('<=tablet') {
+      width: 35px;
+      height: 35px;
+    }
+  }
+}
+
+// call-engineer
+.call-engineer {
+  &__wrapper {
+  }
+  &__btn {
+    @include reset-btn();
+    padding: 0 30px;
+    width: 100%;
+    font-family: 'ProximaNovaDev';
+    height: 60px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    color: #ffffff;
+    background: #48ade7;
+  }
+}
+
+// news
+.news {
+  &__wrapper {
+    max-width: 1190px;
+    margin: 36px auto 100px auto;
+    padding: 0 20px;
+    ul {
+      @include reset-ul();
+      li {
+        margin-bottom: 20px;
+        padding: 20px;
+        border: 1px solid #dadada;
+        transition: box-shadow 0.3s ease;
+        &:hover {
+          box-shadow: 0px 0px 39.1535px rgba(0, 0, 0, 0.25);
+        }
+        @include media('<=phone') {
+          padding: 15px;
+        }
+        &:last-child {
+          margin-bottom: 0;
+        }
+        a {
+          @include reset-link();
+          display: flex;
+          img {
+            margin-right: 30px;
+            height: 190px;
+            width: 280px;
+            flex: 0 1 280px;
+            object-fit: cover;
+            @include media('<=desktop') {
+              width: 200px;
+              flex: 0 1 200px;
+              margin-right: 15px;
+            }
+            @include media('<=tablet') {
+              width: 100px;
+              flex: 0 1 100px;
+              height: 100px;
+            }
+            @include media('<=phone') {
+              display: none;
+            }
+          }
+          div {
+            display: flex;
+            flex-direction: column;
+            flex: 1 1 auto;
+            p:nth-child(1) {
+              text-decoration: underline;
+              font-family: 'RobotoDev';
+              font-weight: 500;
+              font-size: 24px;
+              line-height: 32px;
+              color: #47aae3;
+              margin-bottom: 15px;
+              @include media('<=desktop') {
+                font-size: 20px;
+                line-height: 1.55;
+              }
+              @include media('<=tablet') {
+                font-size: 18px;
+              }
+            }
+            p:nth-child(2) {
+              font-family: 'RobotoDev';
+              font-weight: normal;
+              font-size: 18px;
+              line-height: 29px;
+              color: #434343;
+              display: -webkit-box;
+              -webkit-line-clamp: 2;
+              -webkit-box-orient: vertical;
+              overflow: hidden;
+              margin-bottom: 20px;
+              @include media('<=desktop') {
+                font-size: 16px;
+                line-height: 1.55;
+              }
+              @include media('<=tablet') {
+                font-size: 14px;
+              }
+            }
+            span {
+              margin-top: auto;
+              position: relative;
+              padding-left: 29px;
+              font-family: 'RobotoDev';
+              font-weight: normal;
+              font-size: 15px;
+              line-height: 15px;
+              color: #707070;
+              &::before {
+                content: '';
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                background: url('../images/dest/icon-date.svg') no-repeat center / contain;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  &__pagination {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 25px;
+  }
+}
+
+.news-item {
+  &__wrapper {
+    max-width: 1190px;
+    margin: 36px auto 100px auto;
+    padding: 0 20px;
+  }
+  &__date {
+    position: relative;
+    display: block;
+    margin-bottom: 22px;
+    padding-left: 29px;
+    font-family: 'RobotoDev';
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 15px;
+    color: #707070;
+    &::before {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      background: url('../images/dest/icon-date.svg') no-repeat center / contain;
+    }
+  }
+  &__descr {
+    font-family: 'RubikDev';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 26px;
+    color: #000000;
+    margin-bottom: 20px;
+    @include media('<=desktop') {
+      font-size: 14px;
+      line-height: 1.55;
+    }
+  }
+  &__descr-2 {
+    padding: 28px 62px 21px 41px;
+    font-family: 'RubikDev';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 26px;
+    color: #000000;
+    border: 1px solid #47aae3;
+    border-radius: 26px;
+    box-sizing: border-box;
+    @include media('<=desktop') {
+      margin: 20px 0 20px 0;
+      font-weight: 400;
+      padding: 0 0 0 15px;
+      font-size: 14px;
+      line-height: 1.55;
+      border: 0;
+      border-radius: 0;
+    }
+  }
+  &__title-2 {
+    position: relative;
+    margin: 40px 0 20px 0;
+    font-family: 'RubikDev';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 36px;
+    padding-left: 33px;
+    text-transform: uppercase;
+    color: #000000;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+      width: 21px;
+      height: 5px;
+      background: #1bd7d7;
+    }
+    @include media('<=desktop') {
+      margin-top: 30px;
+      margin-bottom: 30px;
+      font-size: 26px;
+      line-height: 1.55;
+    }
+    @include media('<=tablet') {
+      font-size: 20px;
+    }
+    @include media('<=phone') {
+      font-size: 18px;
+    }
+  }
+  &__list {
+    @include reset-ul();
+    margin: 45px 0;
+    font-family: 'GeometriaDev';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 26px;
+    color: #000000;
+    @include media('<=LGdesktop') {
+      line-height: 1.55;
+      margin: 30px 0;
+    }
+    @include media('<=tablet') {
+      font-size: 14px;
+      margin: 15px 0;
+    }
+    li {
+      position: relative;
+      margin-bottom: 20px;
+      padding-left: 36px;
+      &::before {
+        content: '';
+        position: absolute;
+        width: 19px;
+        height: 19px;
+        left: 0;
+        top: 5px;
+        background: url('../images/dest/icon-check.svg') no-repeat center / contain;
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  &__title-4 {
+    font-family: 'RubikDev';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 28px;
+    color: #47aae3;
+    margin-bottom: 21px;
+    @include media('<=desktop') {
+      margin: 15px 0;
+      font-size: 20px;
+      line-height: 1.55;
+    }
+    @include media('<=tablet') {
+      font-size: 18px;
+    }
+    @include media('<=phone') {
+      font-size: 16px;
+    }
+  }
+  &__float {
+    margin-bottom: 45px;
+    img {
+      float: left;
+      margin-right: 20px;
+      margin-bottom: 20px;
+      max-width: 40%;
+      @include media('<=tablet') {
+        max-width: unset;
+        width: 100%;
+        float: unset;
+        margin-right: 0;
+        margin-bottom: 10px;
+      }
+    }
+    p {
+      font-family: 'RubikDev';
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 26px;
+      color: #000000;
+      margin-bottom: 20px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      @include media('<=desktop') {
+        margin-bottom: 15px;
+        font-size: 14px;
+        line-height: 1.55;
+      }
+    }
+  }
+  &__title-5 {
+    font-family: 'GeometriaDev';
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 23px;
+    text-transform: uppercase;
+    color: #000000;
+    margin-bottom: 22px;
+    @include media('<=desktop') {
+      font-size: 16px;
+      line-height: 1.55;
+    }
+    @include media('<=tablet') {
+      font-size: 14px;
+    }
+  }
+  &__list-2 {
+    @include reset-ul();
+    counter-reset: my-awesome-counter;
+    li {
+      counter-increment: my-awesome-counter;
+      position: relative;
+      font-family: 'GeometriaDev';
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 26px;
+      color: #000000;
+      margin-bottom: 30px;
+      padding-left: 49px;
+      &::before {
+        content: '0' counter(my-awesome-counter);
+        position: absolute;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 32px;
+        height: 32px;
+        background: #47aae3;
+        top: 0;
+        left: 0;
+        font-family: 'RubikDev';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 21px;
+        text-transform: uppercase;
+        color: #ffffff;
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  table {
+    margin-bottom: 60px;
+    border-collapse: collapse;
+    @include media('<=LGdesktop') {
+      margin-bottom: 30px;
+    }
+    @include media('<=tablet') {
+      margin-bottom: 15px;
+    }
+    thead {
+      tr {
+        height: 88px;
+        @include media('<=LGdesktop') {
+          height: 60px;
+        }
+        @include media('<=tablet') {
+          height: 50px;
+        }
+        th {
+          font-family: 'RubikDev';
+          font-style: normal;
+          font-weight: 500;
+          font-size: 18px;
+          line-height: 21px;
+          color: #47aae3;
+          background: #ebf2f5;
+          white-space: nowrap;
+          @include media('<=LGdesktop') {
+            font-size: 16px;
+            line-height: 1.55;
+          }
+          @include media('<=phone') {
+            font-size: 14px;
+          }
+          &:first-child {
+            padding-left: 38px;
+            padding-right: 38px;
+            @include media('<=LGdesktop') {
+              padding-left: 20px;
+              padding-right: 20px;
+            }
+            @include media('<=phone') {
+              display: none;
+            }
+          }
+          &:nth-child(2) {
+            @include media('<=phone') {
+              text-align: left;
+              padding-left: 15px;
+            }
+          }
+          &:last-child {
+            padding-left: 38px;
+            padding-right: 38px;
+            @include media('<=LGdesktop') {
+              padding-left: 20px;
+              padding-right: 20px;
+            }
+            @include media('<=phone') {
+              text-align: center;
+              padding-left: 15px;
+              padding-right: 15px;
+            }
+          }
+        }
+      }
+    }
+    tbody {
+      tr {
+        td {
+          font-family: 'RubikDev';
+          font-style: normal;
+          font-weight: normal;
+          font-size: 16px;
+          line-height: 26px;
+          color: #000000;
+          border-bottom: 1px solid #000;
+          padding-top: 15px;
+          padding-bottom: 15px;
+          @include media('<=LGdesktop') {
+            font-size: 14px;
+            line-height: 1.55;
+          }
+          &:first-child {
+            padding-left: 38px;
+            padding-right: 38px;
+            @include media('<=LGdesktop') {
+              padding-left: 20px;
+              padding-right: 20px;
+            }
+            @include media('<=phone') {
+              display: none;
+            }
+          }
+          &:last-child {
+            padding-left: 38px;
+            padding-right: 38px;
+            @include media('<=LGdesktop') {
+              padding-left: 20px;
+              padding-right: 20px;
+            }
+            @include media('<=phone') {
+              text-align: center;
+              padding-left: 15px;
+              padding-right: 15px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// footer
+.footer {
+  background-color: #292929;
+  &__wrapper {
+    display: flex;
+    padding: 30px 20px 25px 20px;
+    max-width: 1290px;
+    margin: 0 auto;
+    @include media('<=desktop') {
+      flex-direction: column;
+    }
+  }
+  &__left {
+    flex: 1 1 calc(49.5% + 80px);
+    margin-right: 80px;
+    @include media('<=LGdesktop') {
+      flex: none;
+      margin-right: 20px;
+      flex: 1 1 calc(49.5% + 20px);
+    }
+    @include media('<=desktop') {
+      flex: none;
+      margin-right: 0;
+    }
+  }
+  &__left-header {
+    display: flex;
+    margin-bottom: 30px;
+    @include media('<=desktop') {
+      align-items: center;
+      flex-wrap: wrap;
+    }
+  }
+  &__left-title {
+    margin-right: 13px;
+    font-family: 'ProximaNovaDev';
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 37px;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: #ffffff;
+    @include media('<=desktop') {
+      font-size: 20px;
+      line-height: 1;
+    }
+  }
+  &__left-descr {
+    margin-top: 5px;
+    font-family: 'ProximaNovaDev';
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 14px;
+    color: #ffffff80;
+    span {
+      display: block;
+      @include media('<=desktop') {
+        display: inline-block;
+      }
+    }
+  }
+  &__left-contacts {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    @include media('<=desktop') {
+      justify-content: flex-start;
+    }
+    @include media('<=phone') {
+      flex-direction: column;
+    }
+  }
+  &__left-col {
+    &:first-child {
+      @include media('<=desktop') {
+        margin-right: 30px;
+      }
+      @include media('<=phone') {
+        margin-right: 0;
+        margin-bottom: 30px;
+      }
+    }
+  }
+  &__contacts-wa {
+    position: relative;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 26px;
+      height: 26px;
+      background: url('../images/dest/wa.png') no-repeat center / contain;
+    }
+  }
+  &__contacts-vb {
+    position: relative;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 26px;
+      height: 26px;
+      background: url('../images/dest/vb.png') no-repeat center / contain;
+    }
+  }
+  &__left-contacts-col {
+    display: flex;
+    flex-direction: column;
+  }
+  ul {
+    @include reset-ul();
+    margin-bottom: 18px;
+    padding-left: 40px;
+    li {
+      color: #fff;
+      margin-bottom: 10px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      a {
+        @include reset-link(#fff);
+        color: #aff0f0;
+        font-family: 'ProximaNovaDev';
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 19px;
+        color: #ffffff;
+        @include media('<=desktop') {
+          font-size: 14px;
+        }
+      }
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  &__phone {
+    @include reset-link(#fff);
+    margin-bottom: 10px;
+    font-family: 'ProximaNovaDev';
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+    color: #ffffff;
+    @include media('<=desktop') {
+      font-size: 14px;
+    }
+    @include media('<=phone') {
+      margin-left: 40px;
+    }
+  }
+  &__mail {
+    @include reset-link(#fff);
+    margin-bottom: 5px;
+    font-family: 'ProximaNovaDev';
+    font-size: 16px;
+    line-height: 19px;
+    color: #ffffff;
+    @include media('<=desktop') {
+      font-size: 14px;
+    }
+    @include media('<=phone') {
+      margin-left: 40px;
+    }
+  }
+  &__addres {
+    @include reset-link(#fff);
+    margin-bottom: 25px;
+    font-family: 'ProximaNovaDev';
+    font-size: 16px;
+    line-height: 19px;
+    color: #ffffff;
+    @include media('<=desktop') {
+      font-size: 14px;
+    }
+    @include media('<=phone') {
+      margin-left: 40px;
+    }
+  }
+  &__call {
+    @include reset-btn();
+    padding: 18px 56px;
+    background-color: transparent;
+    border: 1px solid #47aae3;
+    font-family: 'ProximaNovaDev';
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    color: #47aae3;
+    @include media('<=desktop') {
+      font-size: 14px;
+    }
+    @include media('<=phone') {
+      padding: 10px 35px;
+      font-size: 16px;
+    }
+  }
+  &__contacts-copy {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'ProximaNovaDev';
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: right;
+    color: #bdbdbd;
+    @include media('<=desktop') {
+      display: none;
+    }
+    a {
+      @include reset-link(#bdbdbd);
+      border-bottom: 1px solid #bdbdbd;
+    }
+    &_mobile {
+      margin-top: 15px;
+      display: none;
+      flex-wrap: wrap;
+      @include media('<=desktop') {
+        display: flex;
+      }
+    }
+  }
+  &__right {
+    height: 293px;
+    flex: 0 1 60%;
+    background-color: #fff;
+    @include media('<=LGdesktop') {
+      flex: none;
+      margin-right: 20px;
+      flex: 1 1 calc(40% + 20px);
+    }
+    @include media('<=desktop') {
+      flex: none;
+      margin-right: 0;
     }
   }
 }

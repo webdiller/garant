@@ -1,9 +1,9 @@
 
 $breakpoints: (
-    'phone': 418px,
+    'phone': 575px,
     'tablet': 768px,
     'desktop': 991px,
-    'LGdesktop': 1920px,
+    'LGdesktop': 1200px,
     '4K': 2560px,
 ) !default;
 
@@ -13,5 +13,5 @@ $montserrat: 'MontserratAlternatesDev',  -apple-system, BlinkMacSystemFont, Aria
 $accent: #1C69D4; 
 $invalid: #FF3D01; 
 $valid: #58E204; 
-$text: #1f2235; 
+$text: #000; 
 $background: #fff; 

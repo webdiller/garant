@@ -14,20 +14,24 @@
 	list-style-type: none;
 }
 
-@mixin reset-link($hoverColor) {
-  color: $text;
+@mixin reset-link($color: #000) {
   text-decoration: none;
+  color: $color;
 	&:hover {
-    color: $hoverColor;
     text-decoration: none;
-	}
+    color: $color;
+  }
+  &:visited {
+    color: $color;
+  }
 }
 
 @mixin reset-btn {
 	padding: 0;
 	background-color: transparent;
 	border: none;
-	outline: none;
+  outline: none;
+  cursor: pointer;
 }
 
 @mixin box-shadow1 {

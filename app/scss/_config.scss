@@ -1,8 +1,22 @@
-@import './_vars.scss';
-@import './_mixins.scss';
-@include font('MontserratAlternatesDev', normal, 500, '../fonts/montserrat/MontserratAlternates-Medium.woff2');
-@include font('MontserratAlternatesDev', normal, 700, '../fonts/montserrat/MontserratAlternates-Bold.woff2');
-// GENERAL DOCUMENT STYLES
+@import "./_vars.scss";
+@import "./_mixins.scss";
+
+@include font("GeometriaDev", normal, 400, "../fonts/Geometria/Geometria-Regular.woff");
+@include font("GeometriaDev", normal, 500, "../fonts/Geometria/Geometria-Medium.woff");
+
+@include font("ProximaNovaDev", normal, 400, "../fonts/ProximaNova/ProximaNova-Regular.woff");
+@include font("ProximaNovaDev", normal, 600, "../fonts/ProximaNova/ProximaNova-Semibold.woff");
+@include font("ProximaNovaDev", normal, 700, "../fonts/ProximaNova/ProximaNova-Bold.woff");
+
+@include font("RobotoDev", normal, 400, "../fonts/Roboto/Roboto-Regular.woff");
+@include font("RobotoDev", normal, 500, "../fonts/Roboto/Roboto-Medium.woff");
+
+@include font("RubikDev", normal, 300, "../fonts/Rubik/Rubik-Light.woff");
+@include font("RubikDev", normal, 400, "../fonts/Rubik/Rubik-Regular.woff");
+@include font("RubikDev", normal, 500, "../fonts/Rubik/Rubik-Medium.woff");
+@include font("RubikDev", normal, 700, "../fonts/Rubik/Rubik-Bold.woff");
+
+@include font("SansationDev", normal, 400, "../fonts/Sansation/Sansation-Regular.woff");
 
 * {
   box-sizing: border-box;
@@ -26,8 +40,6 @@ h6,
 p {
   margin: 0;
 }
-
-
 
 input,
 textarea {
@@ -58,11 +70,10 @@ img {
   height: auto;
 }
 
-
-
 html {
   font-size: $fontsize;
   scroll-behavior: smooth;
+  color:$text;
 }
 
 a:hover {
@@ -80,6 +91,8 @@ body {
   overflow-x: hidden;
   background-color: $background;
   color: $text;
+  opacity: 1;
+  visibility: visible;
 }
 
 textarea,

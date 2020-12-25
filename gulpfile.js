@@ -47,7 +47,7 @@ function scripts() {
 		'app/js/app.js' // app.js. Always at the end
 		])
 	.pipe(concat('app.min.js'))
-	.pipe(uglify()) // Minify JS (opt.)
+	// .pipe(uglify()) 
 	.pipe(dest('app/js'))
 	.pipe(browserSync.stream())
 }
