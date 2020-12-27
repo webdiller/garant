@@ -36,11 +36,11 @@
         </a>
         <nav class="header__nav">
           <a href="/" class="header__nav-item">Главная</a>
-          <a href="/" class="header__nav-item">Услуги</a>
-          <a href="/" class="header__nav-item">О компании</a>
-          <a href="/" class="header__nav-item">Портфолио</a>
-          <a href="/" class="header__nav-item">Новости</a>
-          <a href="/" class="header__nav-item">Контакты</a>
+          <a href="/usluga.html" class="header__nav-item">Услуги</a>
+          <a href="/about.html" class="header__nav-item">О компании</a>
+          <a href="/portfolio.html" class="header__nav-item">Портфолио</a>
+          <a href="/news.html" class="header__nav-item">Новости</a>
+          <a href="/contacts.html" class="header__nav-item">Контакты</a>
         </nav>
         <div class="header__contact">
           <div class="header__contact-socials">
@@ -57,15 +57,16 @@
               >garant-kachestvo@mail.ru</a
             >
             <div id="menu_phone" class="header__contact-phones">
-              <a href="+74993200088" class="header__contact-phone">7 (499) 320 00 88</a>
+              <a href="tel:+74993200088" class="header__contact-phone">7 (499) 320 00 88</a>
               <div id="menu_dropdown" class="header__contact-dropdown">
-                <a href="+79168796098" class="header__contact-dropphone">+7 916 879 60 98</a>
-                <a href="+79162554865" class="header__contact-dropphone">+7 916 255 48 65</a>
+                <a href="tel:+79168796098" class="header__contact-dropphone">+7 916 879 60 98</a>
+                <a href="tel:+79162554865" class="header__contact-dropphone">+7 916 255 48 65</a>
               </div>
             </div>
           </div>
           <button class="header__contact-modal">Оставить заявку</button>
         </div>
+        <button id="menu_call" class="header__menu-call">Меню</button>
       </div>
     </header>
 
@@ -99,22 +100,24 @@
           нашей деятельности играет определяющее значение для благоприятных перспектив. В своём
           стремлении повысить качество жизни
         </p>
-        <!-- <ul class="usluga-content__razdel">
-          <li>
-            <a href="/"> Подраздел1 </a>
-          </li>
-          <li>
-            <a href="/"> Подраздел1 </a>
-          </li>
-        </ul>
-        <ul class="usluga-content__usluga">
-          <li>
-            <a href="/"> Название подуслуги </a>
-          </li>
-          <li>
-            <a href="/"> Название подуслуги </a>
-          </li>
-        </ul> -->
+        <div class="usluga-content__lists">
+          <ul class="usluga-content__razdel">
+            <li>
+              <a href="/"> Подраздел1 </a>
+            </li>
+            <li>
+              <a href="/"> Подраздел1 </a>
+            </li>
+          </ul>
+          <ul class="usluga-content__usluga">
+            <li>
+              <a href="/"> Название подуслуги </a>
+            </li>
+            <li>
+              <a href="/"> Название подуслуги </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
 
@@ -123,60 +126,33 @@
         <p class="portfolio__title">Галерея</p>
         <ul class="portfolio__list">
           <li class="portfolio__item">
-            <a href="/" class="portfolio__link">
-              <img src="./images/dest/portfolio1.jpg" alt="" class="portfolio__img" />
-            </a>
+            <img src="./images/dest/portfolio1.jpg" alt="" class="portfolio__img" />
           </li>
           <li class="portfolio__item">
-            <a href="/" class="portfolio__link">
-              <img src="./images/dest/portfolio2.jpg" alt="" class="portfolio__img" />
-            </a>
+            <img src="./images/dest/portfolio2.jpg" alt="" class="portfolio__img" />
           </li>
           <li class="portfolio__item">
-            <a href="/" class="portfolio__link">
-              <img src="./images/dest/portfolio3.jpg" alt="" class="portfolio__img" />
-            </a>
+            <img src="./images/dest/portfolio3.jpg" alt="" class="portfolio__img" />
           </li>
           <li class="portfolio__item">
-            <a href="/" class="portfolio__link">
-              <img src="./images/dest/portfolio4.jpg" alt="" class="portfolio__img" />
-            </a>
+            <img src="./images/dest/portfolio4.jpg" alt="" class="portfolio__img" />
           </li>
           <li class="portfolio__item">
-            <a href="/" class="portfolio__link">
               <img src="./images/dest/portfolio5.jpg" alt="" class="portfolio__img" />
-            </a>
           </li>
           <li class="portfolio__item">
-            <a href="/" class="portfolio__link">
-              <img src="./images/dest/portfolio6.jpg" alt="" class="portfolio__img" />
-            </a>
+            <img src="./images/dest/portfolio6.jpg" alt="" class="portfolio__img" />
           </li>
           <li class="portfolio__item">
-            <a href="/" class="portfolio__link">
-              <img src="./images/dest/portfolio7.jpg" alt="" class="portfolio__img" />
-            </a>
+            <img src="./images/dest/portfolio7.jpg" alt="" class="portfolio__img" />
           </li>
           <li class="portfolio__item">
-            <a href="/" class="portfolio__link">
-              <img src="./images/dest/portfolio8.jpg" alt="" class="portfolio__img" />
-            </a>
+            <img src="./images/dest/portfolio8.jpg" alt="" class="portfolio__img" />
           </li>
           <li class="portfolio__item">
-            <a href="/" class="portfolio__link">
-              <img src="./images/dest/portfolio9.jpg" alt="" class="portfolio__img" />
-            </a>
+            <img src="./images/dest/portfolio9.jpg" alt="" class="portfolio__img" />
           </li>
         </ul>
-        <div class="pagination portfolio__pagination">
-          <button class="pagination__prev"></button>
-          <span class="pagination__current">1</span>
-          <a href="/" class="pagination__item">2</a>
-          <a href="/" class="pagination__item">3</a>
-          <a href="/" class="pagination__item">4</a>
-          <span class="pagination__dots">...</span>
-          <button class="pagination__next"></button>
-        </div>
       </div>
     </section>
 
@@ -206,7 +182,7 @@
                 >garant-kachestvo@mail.ru</a
               >
               <p class="footer__addres">г. Москва, Пролетарский проспект, дом 19/3</p>
-              <button class="footer__call">Заказать звонок</button>
+              <button data-call class="footer__call">Заказать звонок</button>
             </div>
           </div>
           <div class="footer__contacts-copy">
@@ -217,9 +193,9 @@
 
         <div class="footer__right">
           <iframe
-              src="https://yandex.ru/map-widget/v1/?um=constructor%3A3549895919568cd80874cb5f56e167d780035809d0dcddcc8176ed8672773e67&amp;source=constructor"
-              style="border: 0; width: 100%; height: 100%;"
-            ></iframe>
+            src="https://yandex.ru/map-widget/v1/?um=constructor%3A3549895919568cd80874cb5f56e167d780035809d0dcddcc8176ed8672773e67&amp;source=constructor"
+            style="border: 0; width: 100%; height: 100%"
+          ></iframe>
         </div>
 
         <div class="footer__contacts-copy footer__contacts-copy_mobile">
@@ -228,6 +204,25 @@
         </div>
       </div>
     </footer>
+
+    <div id="modal" class="modal">
+      <div class="modal__wrapper">
+        <button data-close class="modal__close">✖</button>
+        <p class="modal__title">Оставьте заявку</p>
+        <p class="modal__descr">Наш специалист свяжется с вами в течении 15 минут</p>
+        <form class="modal__form">
+          <input type="text" placeholder="Ваше имя *" class="modal__input modal__input_user" />
+          <input type="number" placeholder="Ваш телефон *" class="modal__input modal__input_phone" />
+          <div class="modal__group">
+            <input class="modal__agree-input" type="checkbox" id="agree" name="agree" />
+            <label class="modal__agree-label" for="agree">
+              Я прочитал(а) и согласен(а) с Политикой конфиденциальности*
+            </label>
+          </div>
+          <button class="modal__agree">Отправить заявку</button>
+        </form>
+      </div>
+    </div>
 
     <script src="js/app.min.js"></script>
   </body>

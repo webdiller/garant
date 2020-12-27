@@ -15,6 +15,7 @@ const autoprefixer = require('gulp-autoprefixer');
 const imagemin     = require('gulp-imagemin');
 const rsync        = require('gulp-rsync');
 const del          = require('del');
+const gcmq = require('gulp-group-css-media-queries');
 
 // Local Server
 
@@ -32,6 +33,7 @@ function browsersync() {
 function styles() {
 	return src('app/' + preprocessor + '/main.*')
 	.pipe(eval(preprocessor)())
+	.pipe(gcmq())
 	.pipe(concat('app.min.css'))
 	.pipe(autoprefixer({ overrideBrowserslist: ['last 10 versions'], grid: true }))
 	.pipe(cleancss( {level: { 1: { specialComments: 0 } } }))

@@ -9,9 +9,16 @@
 1.35
 
 Заголовок h1
-991 - 26
-768 - 20
-576 - 18
+@include media('<=desktop') {
+    font-size: 26px;
+    line-height: 1.55;
+}
+@include media('<=tablet') {
+    font-size: 20px;
+}
+@include media('<=phone') {
+    font-size: 18px;
+}
 
 Расстояние до футера
 Новости - 100px
