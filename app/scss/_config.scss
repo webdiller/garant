@@ -1,5 +1,6 @@
 @import "./_vars.scss";
 @import "./_mixins.scss";
+@import "../libs/fancybox/jquery.fancybox.css";
 
 @include font("GeometriaDev", normal, 400, "../fonts/Geometria/Geometria-Regular.woff");
 @include font("GeometriaDev", normal, 500, "../fonts/Geometria/Geometria-Medium.woff");

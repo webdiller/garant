@@ -124,33 +124,87 @@
     <section class="portfolio">
       <div class="portfolio__wrapper">
         <p class="portfolio__title">Галерея</p>
-        <ul class="portfolio__list">
+        <ul id="gallery" class="portfolio__list">
           <li class="portfolio__item">
-            <img src="./images/dest/portfolio1.jpg" alt="" class="portfolio__img" />
+            <a
+              href="./images/dest/portfolio1.jpg"
+              data-fancybox
+              data-caption="Caption for single image"
+            >
+              <img src="./images/dest/portfolio1.jpg" alt="thumbnail" />
+            </a>
           </li>
           <li class="portfolio__item">
-            <img src="./images/dest/portfolio2.jpg" alt="" class="portfolio__img" />
+            <a
+              href="./images/dest/portfolio2.jpg"
+              data-fancybox
+              data-caption="Caption for single image"
+            >
+              <img src="./images/dest/portfolio2.jpg" alt="thumbnail" />
+            </a>
           </li>
           <li class="portfolio__item">
-            <img src="./images/dest/portfolio3.jpg" alt="" class="portfolio__img" />
+            <a
+              href="./images/dest/portfolio3.jpg"
+              data-fancybox
+              data-caption="Caption for single image"
+            >
+              <img src="./images/dest/portfolio3.jpg" alt="thumbnail" />
+            </a>
           </li>
           <li class="portfolio__item">
-            <img src="./images/dest/portfolio4.jpg" alt="" class="portfolio__img" />
+            <a
+              href="./images/dest/portfolio4.jpg"
+              data-fancybox
+              data-caption="Caption for single image"
+            >
+              <img src="./images/dest/portfolio4.jpg" alt="thumbnail" />
+            </a>
           </li>
           <li class="portfolio__item">
-              <img src="./images/dest/portfolio5.jpg" alt="" class="portfolio__img" />
+            <a
+              href="./images/dest/portfolio5.jpg"
+              data-fancybox
+              data-caption="Caption for single image"
+            >
+              <img src="./images/dest/portfolio5.jpg" alt="thumbnail" />
+            </a>
           </li>
           <li class="portfolio__item">
-            <img src="./images/dest/portfolio6.jpg" alt="" class="portfolio__img" />
+            <a
+              href="./images/dest/portfolio6.jpg"
+              data-fancybox
+              data-caption="Caption for single image"
+            >
+              <img src="./images/dest/portfolio6.jpg" alt="thumbnail" />
+            </a>
           </li>
           <li class="portfolio__item">
-            <img src="./images/dest/portfolio7.jpg" alt="" class="portfolio__img" />
+            <a
+              href="./images/dest/portfolio7.jpg"
+              data-fancybox
+              data-caption="Caption for single image"
+            >
+              <img src="./images/dest/portfolio7.jpg" alt="thumbnail" />
+            </a>
           </li>
           <li class="portfolio__item">
-            <img src="./images/dest/portfolio8.jpg" alt="" class="portfolio__img" />
+            <a
+              href="./images/dest/portfolio8.jpg"
+              data-fancybox
+              data-caption="Caption for single image"
+            >
+              <img src="./images/dest/portfolio8.jpg" alt="thumbnail" />
+            </a>
           </li>
           <li class="portfolio__item">
-            <img src="./images/dest/portfolio9.jpg" alt="" class="portfolio__img" />
+            <a
+              href="./images/dest/portfolio9.jpg"
+              data-fancybox
+              data-caption="Caption for single image"
+            >
+              <img src="./images/dest/portfolio9.jpg" alt="thumbnail" />
+            </a>
           </li>
         </ul>
       </div>
@@ -212,7 +266,11 @@
         <p class="modal__descr">Наш специалист свяжется с вами в течении 15 минут</p>
         <form class="modal__form">
           <input type="text" placeholder="Ваше имя *" class="modal__input modal__input_user" />
-          <input type="number" placeholder="Ваш телефон *" class="modal__input modal__input_phone" />
+          <input
+            type="number"
+            placeholder="Ваш телефон *"
+            class="modal__input modal__input_phone"
+          />
           <div class="modal__group">
             <input class="modal__agree-input" type="checkbox" id="agree" name="agree" />
             <label class="modal__agree-label" for="agree">
@@ -223,7 +281,6 @@
         </form>
       </div>
     </div>
-
     <script src="js/app.min.js"></script>
   </body>
 </html>
