@@ -11,16 +11,21 @@ document.addEventListener('DOMContentLoaded', function(){
   
     try {
       let menu_call = document.getElementById('menu_call');
+      let menu_bar = document.getElementById('menu_bar');
+      let menu_close = document.getElementById('menu_close');
       let header__nav = document.querySelector('.header__nav');
-      let header__nav_item = document.querySelectorAll('.header__nav-item');
       menu_call.addEventListener('click', function (e) {
         e.preventDefault();
         header__nav.classList.toggle('active');
+        menu_bar.classList.toggle('active');
+        menu_close.classList.toggle('active');
       });
       if (window.innerWidth <= 1500) {
         header__nav.addEventListener('click', function (e) {
           e.stopPropagation();
           header__nav.classList.remove('active');
+          menu_bar.classList.add('active');
+          menu_close.classList.remove('active');
         });
       }
     } catch (error) {}
@@ -52,6 +57,7 @@ document.addEventListener('DOMContentLoaded', function(){
   
   const lightBoxModule = (function () {
     try {
+      
     } catch (error) {}
   })();
   

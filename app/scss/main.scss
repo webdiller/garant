@@ -31,7 +31,7 @@
     }
   }
   &__logo-title {
-    font-family: 'SansationDev';
+    font-family: 'RobotoDev';
     font-size: 30px;
     line-height: 27px;
     text-transform: uppercase;
@@ -43,7 +43,7 @@
       font-size: 16px;
     }
     &:first-child {
-      margin-right: 10px;
+      margin-right: 5px;
       color: #1bd7d7;
       @include media('<=desktop') {
         margin-right: 5px;
@@ -101,7 +101,6 @@
     }
     &::before {
       display: none;
-      content: 'Закрыть';
       position: absolute;
       top: 20px;
       right: 20px;
@@ -128,6 +127,7 @@
     @include media('<=1500px') {
       font-size: 26px;
       line-height: 1.55;
+      margin-right: 0;
     }
     @include media('<=desktop') {
       font-size: 18px;
@@ -256,7 +256,8 @@
     }
   }
   &__menu-call {
-    @include reset-btn();
+    position: relative;
+    z-index: 100000;
     display: none;
     margin-left: 30px;
     font-family: 'RubikDev';
@@ -264,16 +265,61 @@
     font-size: 18px;
     line-height: 1.55;
     text-decoration: underline;
+    width: 20px;
+    height: 14px;
+    cursor: pointer;
     @include media('<=1500px') {
-      display: block;
+      display: flex;
+      flex-direction: column;
     }
     @include media('<=LGdesktop') {
       font-size: 16px;
     }
     @include media('<=phone') {
       position: relative;
-      top: -10px;
+      top: -5px;
       font-size: 14px;
+    }
+  }
+  &__menu-menu {
+    position: absolute;
+    width: 100%;
+    transition: all 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    z-index: -1;
+    &.active {
+      opacity: 1;
+      visibility: visible;
+      z-index: 1;
+    }
+    span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: #000;
+      margin: 2px 0;
+    }
+  }
+  &__menu-close {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    z-index: -1;
+    transition: all 0.3s ease;
+    font-size: 25px;
+    height: 14px;
+    &.active {
+      opacity: 1;
+      visibility: visible;
+      z-index: 1;
+    }
+    span {
+      line-height: 1;
     }
   }
 }
@@ -343,7 +389,7 @@
 .promo {
   &__wrapper {
     position: relative;
-    height: 950px;
+    height: 624px;
     @include media('<=LGdesktop') {
       height: 70vh;
     }
@@ -581,9 +627,11 @@
     }
   }
   &__item {
+    @include reset-link();
     position: relative;
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     flex: 1 1 calc(50% - 10px);
     overflow: hidden;
     &_sm {
@@ -684,10 +732,10 @@
         }
       }
       &:nth-child(2) {
-        max-height: 389px;
+        min-height: 389px;
         margin-bottom: 15px;
         @include media('<=tablet') {
-          max-height: unset;
+          min-height: unset;
           height: auto;
         }
         img {
@@ -698,58 +746,12 @@
         color: #fff;
       }
     }
-    button {
-      @include reset-btn();
-      z-index: 10;
-      position: relative;
-      font-family: 'RubikDev';
-      display: flex;
-      flex: 1 1 auto;
-      align-items: center;
-      padding-left: 48px;
-      font-style: normal;
-      font-weight: 500;
-      font-size: 24px;
-      line-height: 30px;
-      color: #000000;
-      border: 1px solid #000;
-      &::before {
-        content: '';
-        position: absolute;
-        width: 42px;
-        height: 22px;
-        right: 49px;
-        top: 50%;
-        transform: translateY(-50%);
-        background: url('../images/dest/arrow-black.svg') no-repeat center / contain;
-      }
-      @include media('<=LGdesktop') {
-        height: 120px;
-      }
-      @include media('<=desktop') {
-        height: 80px;
-        font-size: 20px;
-        line-height: 1.55;
-      }
-      @include media('<=tablet') {
-        height: 60px;
-        font-size: 18px;
-        padding-left: 25px;
-      }
-      @include media('<=phone') {
-        height: 50px;
-        font-size: 16px;
-        padding-left: 25px;
-        &::before {
-          display: none;
-        }
-      }
-    }
   }
   ul {
     @include reset-ul();
     position: relative;
     z-index: 10;
+    margin-bottom: 10px;
     li {
       font-family: 'RubikDev';
       font-style: normal;
@@ -777,6 +779,7 @@
     }
   }
   &__link-blue {
+    @include reset-btn();
     position: relative;
     display: inline-block;
     z-index: 10;
@@ -793,6 +796,7 @@
     }
   }
   &__link-white {
+    @include reset-btn();
     position: relative;
     display: inline-block;
     z-index: 10;
@@ -804,6 +808,57 @@
     text-decoration-line: underline;
     text-transform: uppercase;
     color: #aff0f0;
+  }
+  &__call {
+    @include reset-btn();
+    z-index: 10;
+    position: relative;
+    font-family: 'RubikDev';
+    display: flex;
+    flex: 1 1 auto;
+    align-items: center;
+    padding-left: 48px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 30px;
+    color: #000000;
+    border: 1px solid #000;
+    min-height: 132px;
+    &::before {
+      content: '';
+      position: absolute;
+      width: 42px;
+      height: 22px;
+      right: 49px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: url('../images/dest/arrow-black.svg') no-repeat center / contain;
+    }
+    @include media('<=LGdesktop') {
+      min-height: unset;
+      height: 120px;
+    }
+    @include media('<=desktop') {
+      height: 80px;
+      font-size: 20px;
+      line-height: 1.55;
+    }
+    @include media('<=tablet') {
+      height: 60px;
+      font-size: 18px;
+      padding-left: 25px;
+    }
+    @include media('<=phone') {
+      height: 50px;
+      font-size: 16px;
+      padding-left: 25px;
+      &::before {
+        display: none;
+      }
+    }
   }
 }
 
@@ -825,6 +880,8 @@
     margin-bottom: 75px;
     @include media('<=tablet') {
       margin-bottom: 0;
+      display: flex;
+      flex-direction: column;
     }
   }
   &__card {
@@ -840,7 +897,9 @@
     }
     @include media('<=tablet') {
       top: 0;
-      padding: 15px;
+      padding: 0;
+      max-width: unset;
+      box-shadow: none;
     }
     p {
       margin-bottom: 30px;
@@ -852,6 +911,9 @@
       color: #000000;
       @include media('<=desktop') {
         font-size: 14px;
+      }
+      @include media('<=tablet') {
+        margin-bottom: 20px;
       }
     }
     button {
@@ -901,7 +963,7 @@
       line-height: 1.55;
     }
     @include media('<=tablet') {
-      margin-top: 30px;
+      margin-top: 20px;
     }
   }
   img {
@@ -914,11 +976,16 @@
     object-fit: cover;
     @include media('<=desktop') {
       right: 50%;
-      transform: translate(50%, -50%);
+      transform: translate(50%, -35%);
       width: 100%;
     }
     @include media('<=tablet') {
-      display: none;
+      position: relative;
+      right: unset;
+      transform: translate(0, 0);
+      order: -1;
+      margin-bottom: 20px;
+      height: 300px;
     }
   }
   &__lists {
@@ -929,6 +996,7 @@
     }
     @include media('<=tablet') {
       flex-wrap: wrap;
+      margin-top: 20px;
     }
   }
   &__razdel {
@@ -1198,6 +1266,7 @@
     }
   }
   &__item {
+    @include reset-link();
     display: flex;
     flex: 0 1 calc(50%);
     @include media('<=tablet') {
@@ -1260,28 +1329,28 @@
     p:nth-child(3) {
       margin-top: auto;
     }
-    span {
-      font-family: 'RubikDev';
-      font-style: normal;
-      font-weight: normal;
-      font-size: 14px;
-      line-height: 17px;
-      text-transform: uppercase;
-      color: #434343;
-      opacity: 0.8;
-      display: inline-block;
-      margin-right: 20px;
-    }
-    a {
-      font-family: 'RubikDev';
-      font-style: normal;
-      font-weight: normal;
-      font-size: 14px;
-      line-height: 17px;
-      text-decoration-line: underline;
-      text-transform: capitalize;
-      color: #47aae3;
-    }
+  }
+  &__date {
+    font-family: 'RubikDev';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    text-transform: uppercase;
+    color: #434343;
+    opacity: 0.8;
+    display: inline-block;
+    margin-right: 20px;
+  }
+  &__more {
+    font-family: 'RubikDev';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    text-decoration-line: underline;
+    text-transform: capitalize;
+    color: #47aae3;
   }
 }
 
@@ -1301,8 +1370,6 @@
       padding: 0 15px;
     }
   }
-  // &__content {
-  // }
   &__descr {
     font-family: 'ProximaNovaDev';
     font-size: 16px;
@@ -1405,6 +1472,10 @@
       }
       img {
         margin-right: 16px;
+        @include media('<=phone') {
+          width: 60px;
+          height: auto;
+        }
       }
       p {
         font-family: 'ProximaNovaDev';
@@ -1499,6 +1570,10 @@
     margin: 0 12.5px 25px 12.5px;
     flex: 0 1 calc(33.33% - 25px);
     height: 274px;
+    overflow: hidden;
+    a {
+      height: 100%;
+    }
     @include media('<=desktop') {
       margin: 0 10px 20px 10px;
       flex: 0 1 calc(33.33% - 20px);
@@ -1513,12 +1588,16 @@
       height: 125px;
     }
   }
-  // &__link {
-  // }
-  &__img {
+  &__img,
+  img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: all 0.3s ease;
+    transform: scale(1.05);
+    &:hover {
+      transform: scale(1);
+    }
   }
   &__pagination {
     display: flex;
@@ -1536,13 +1615,13 @@
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(255,255,255,.8);
+  background-color: rgba(255, 255, 255, 0.8);
   display: flex;
 
   opacity: 0;
   visibility: hidden;
   z-index: -1;
-  transition: background-color .3s ease, opacity .3s ease, visibility .3s ease;
+  transition: background-color 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
 }
 
 #lightbox.active {
@@ -2315,20 +2394,6 @@
       line-height: 1;
     }
   }
-  &__left-descr {
-    margin-top: 5px;
-    font-family: 'ProximaNovaDev';
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 14px;
-    color: #ffffff80;
-    span {
-      display: block;
-      @include media('<=desktop') {
-        display: inline-block;
-      }
-    }
-  }
   &__left-contacts {
     display: flex;
     justify-content: space-between;
@@ -2510,6 +2575,9 @@
       flex: none;
       margin-right: 0;
     }
+  }
+  &__copy {
+    text-decoration: none;
   }
 }
 

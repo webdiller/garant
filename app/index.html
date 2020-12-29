@@ -65,7 +65,16 @@
           </div>
           <button data-call class="header__contact-modal">Оставить заявку</button>
         </div>
-        <button id="menu_call" class="header__menu-call">Меню</button>
+        <div id="menu_call" class="header__menu-call">
+          <div id="menu_bar" class="header__menu-menu active">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div id="menu_close" class="header__menu-close">
+            <span>&times;</span>
+          </div>
+        </div>
       </div>
     </header>
 
@@ -99,7 +108,7 @@
         <h3 class="uslugi__title">Наши услуги</h3>
         <div class="uslugi__items">
           <div class="uslugi__left">
-            <div class="uslugi__item">
+            <a href="/" class="uslugi__item">
               <p class="uslugi__item-title">Ремонт стоматологического оборудования</p>
               <ul>
                 <li>Наконечники и <span> Компрессоры </span></li>
@@ -109,26 +118,26 @@
                 <li>Запчасти</li>
                 <li>Оборудование б/у</li>
               </ul>
-              <a class="uslugi__link-blue" href="/">Смотреть все</a>
+              <span class="uslugi__link-blue">Смотреть все</span>
               <img src="./images/dest/uslugi1.png" alt="" />
-            </div>
-            <div class="uslugi__item uslugi__item_sm">
+            </a>
+            <a href="/" class="uslugi__item uslugi__item_sm">
               <p class="uslugi__item-title-center">Обивка и перетяжка мягкой мебели</p>
               <img src="./images/dest/uslugi2.png" alt="" />
-            </div>
-            <div class="uslugi__item uslugi__item_sm">
+            </a>
+            <a href="/" class="uslugi__item uslugi__item_sm">
               <p class="uslugi__item-title-center">Матрасы на стоматологическое кресло</p>
               <img src="./images/dest/uslugi3.png" alt="" />
-            </div>
+            </a>
           </div>
           <div class="uslugi__right">
-            <div class="uslugi__item uslugi__item_wide uslugi__item_green">
+            <a href="/" class="uslugi__item uslugi__item_wide uslugi__item_green">
               <p class="uslugi__item-title uslugi__item-title_white">
                 Перетяжка стомотологического кресла
               </p>
               <img src="./images/dest/uslugi4.png" alt="" />
-            </div>
-            <div class="uslugi__item uslugi__item_wide uslugi__item_blue">
+            </a>
+            <a href="/" class="uslugi__item uslugi__item_wide uslugi__item_blue">
               <p class="uslugi__item-title uslugi__item-title_white">
                 Ремонт и перетяжка медицинской мебели
               </p>
@@ -139,10 +148,10 @@
                 <li>Стулья врача</li>
                 <li>Кушетки</li>
               </ul>
-              <a class="uslugi__link-white" href="/">Смотреть все</a>
+              <span class="uslugi__link-white">Смотреть все</span>
               <img src="./images/dest/uslugi5.png" alt="" />
-            </div>
-            <button data-call>Оставить заявку на услугу</button>
+            </a>
+            <button class="uslugi__call" data-call>Оставить заявку на услугу</button>
           </div>
         </div>
       </div>
@@ -154,20 +163,21 @@
           <h5 class="gallery__title">ГАЛЕРЕЯ НАШИХ РАБОТ</h5>
           <p class="gallery__descr">Фото некоторых выполненных работ нашей фирмой</p>
         </div>
+        <div class="gallery__slider"></div>
       </div>
     </section>
 
     <div class="about">
       <div class="about__wrapper">
         <div class="about__content">
-          <div action="" class="about__form-wrapper">
+          <div class="about__form-wrapper">
             <p class="about__form-title">Закажите бесплатную консультацию</p>
             <p class="about__form-descr">Наш специалист свяжется с вами в течении 15 минут</p>
             <form id="sendForm" class="about-form">
               <div class="about-form__group"></div>
               <input type="text" placeholder="Ваше имя *" />
               <input type="number" placeholder="Ваш телефон *" />
-              <input type="checkbox" name="" id="" />
+              <input type="checkbox" />
             </form>
             <img class="about__form-img" src="./images/dest/form-img.png" alt="Заполните форму" />
           </div>
@@ -220,7 +230,7 @@
       <div class="our-news__wrapper">
         <h6 class="our-news__title">Наши новости</h6>
         <div class="our-news__list">
-          <div class="our-news__item">
+          <a href="/" class="our-news__item">
             <img src="./images/dest/news1.jpg" alt="" />
             <div>
               <p>Являясь всего лишь общей картины</p>
@@ -228,17 +238,23 @@
                 Являясь всего лишь частью общей картины, предприниматели в сети интернет рассмотрены
                 исключительно
               </p>
-              <p><span>14.04.2019</span> <a href="/">Подробнее</a></p>
+              <p>
+                <span class="our-news__date">14.04.2019</span>
+                <span class="our-news__more">Подробнее</span>
+              </p>
             </div>
-          </div>
-          <div class="our-news__item">
+          </a>
+          <a href="/" class="our-news__item">
             <img src="./images/dest/news2.jpg" alt="" />
             <div>
               <p>С учётом сложившейся международной обстановки</p>
               <p>Также как новая модель организационной деятельности способствует повышению .</p>
-              <p><span>14.04.2019</span> <a href="/">Подробнее</a></p>
+              <p>
+                <span class="our-news__date">14.04.2019</span>
+                <span class="our-news__more">Подробнее</span>
+              </p>
             </div>
-          </div>
+          </a>
         </div>
       </div>
     </section>
@@ -248,7 +264,6 @@
         <div class="footer__left">
           <div class="footer__left-header">
             <p class="footer__left-title">Гарант-Качество</p>
-            <p class="footer__left-descr">Ремонт и сервисное <span>обслуживание?</span></p>
           </div>
 
           <div class="footer__left-contacts">
@@ -273,7 +288,7 @@
             </div>
           </div>
           <div class="footer__contacts-copy">
-            <p>Политика конфиденциальности</p>
+            <a class="footer__copy" href="/">Политика конфиденциальности</a>
             <p>Создание сайта Digital-агентство <a href="/">WebReforma</a></p>
           </div>
         </div>
@@ -281,14 +296,12 @@
         <div class="footer__right">
           <iframe
             src="https://yandex.ru/map-widget/v1/?um=constructor%3A3549895919568cd80874cb5f56e167d780035809d0dcddcc8176ed8672773e67&amp;source=constructor"
-            width="100%"
-            height="100%"
-            frameborder="0"
+            style="border: 0; width: 100%; height: 100%"
           ></iframe>
         </div>
 
         <div class="footer__contacts-copy footer__contacts-copy_mobile">
-          <p>Политика конфиденциальности</p>
+          <a class="footer__copy" href="/">Политика конфиденциальности</a>
           <p>Создание сайта Digital-агентство <a href="/">WebReforma</a></p>
         </div>
       </div>
@@ -301,7 +314,11 @@
         <p class="modal__descr">Наш специалист свяжется с вами в течении 15 минут</p>
         <form class="modal__form">
           <input type="text" placeholder="Ваше имя *" class="modal__input modal__input_user" />
-          <input type="number" placeholder="Ваш телефон *" class="modal__input modal__input_phone" />
+          <input
+            type="number"
+            placeholder="Ваш телефон *"
+            class="modal__input modal__input_phone"
+          />
           <div class="modal__group">
             <input class="modal__agree-input" type="checkbox" id="agree" name="agree" />
             <label class="modal__agree-label" for="agree">

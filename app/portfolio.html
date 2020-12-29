@@ -66,7 +66,16 @@
           </div>
           <button class="header__contact-modal">Оставить заявку</button>
         </div>
-        <button id="menu_call" class="header__menu-call">Меню</button>
+        <div id="menu_call" class="header__menu-call">
+          <div id="menu_bar" class="header__menu-menu active">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div id="menu_close" class="header__menu-close">
+            <span>&times;</span>
+          </div>
+        </div>
       </div>
     </header>
 
@@ -80,7 +89,7 @@
       </div>
     </div>
 
-    <section class="portfolio">
+    <div class="portfolio">
       <div class="portfolio__wrapper">
         <p class="portfolio__title"></p>
         <p class="portfolio__description">
@@ -91,48 +100,80 @@
         </p>
         <ul class="portfolio__list">
           <li class="portfolio__item">
-            <a href="/" class="portfolio__link">
-              <img src="./images/dest/portfolio1.jpg" alt="" class="portfolio__img" />
+            <a data-fancybox="gallery" href="./images/dest/portfolio2.jpg">
+              <img src="./images/dest/portfolio2.jpg" alt="" />
+          </a>
+          </li>
+          <li class="portfolio__item">
+            <a
+              href="./images/dest/portfolio2.jpg"
+              data-fancybox="gallery" 
+              data-caption="Caption for single image"
+            >
+              <img src="./images/dest/portfolio2.jpg" alt="thumbnail" />
             </a>
           </li>
           <li class="portfolio__item">
-            <a href="/" class="portfolio__link">
-              <img src="./images/dest/portfolio2.jpg" alt="" class="portfolio__img" />
+            <a
+              href="./images/dest/portfolio3.jpg"
+              data-fancybox="gallery" 
+              data-caption="Caption for single image"
+            >
+              <img src="./images/dest/portfolio3.jpg" alt="thumbnail" />
             </a>
           </li>
           <li class="portfolio__item">
-            <a href="/" class="portfolio__link">
-              <img src="./images/dest/portfolio3.jpg" alt="" class="portfolio__img" />
+            <a
+              href="./images/dest/portfolio4.jpg"
+              data-fancybox="gallery" 
+              data-caption="Caption for single image"
+            >
+              <img src="./images/dest/portfolio4.jpg" alt="thumbnail" />
             </a>
           </li>
           <li class="portfolio__item">
-            <a href="/" class="portfolio__link">
-              <img src="./images/dest/portfolio4.jpg" alt="" class="portfolio__img" />
+            <a
+              href="./images/dest/portfolio5.jpg"
+              data-fancybox="gallery" 
+              data-caption="Caption for single image"
+            >
+              <img src="./images/dest/portfolio5.jpg" alt="thumbnail" />
             </a>
           </li>
           <li class="portfolio__item">
-            <a href="/" class="portfolio__link">
-              <img src="./images/dest/portfolio5.jpg" alt="" class="portfolio__img" />
+            <a
+              href="./images/dest/portfolio6.jpg"
+              data-fancybox="gallery" 
+              data-caption="Caption for single image"
+            >
+              <img src="./images/dest/portfolio6.jpg" alt="thumbnail" />
             </a>
           </li>
           <li class="portfolio__item">
-            <a href="/" class="portfolio__link">
-              <img src="./images/dest/portfolio6.jpg" alt="" class="portfolio__img" />
+            <a
+              href="./images/dest/portfolio7.jpg"
+              data-fancybox="gallery" 
+              data-caption="Caption for single image"
+            >
+              <img src="./images/dest/portfolio7.jpg" alt="thumbnail" />
             </a>
           </li>
           <li class="portfolio__item">
-            <a href="/" class="portfolio__link">
-              <img src="./images/dest/portfolio7.jpg" alt="" class="portfolio__img" />
+            <a
+              href="./images/dest/portfolio8.jpg"
+              data-fancybox="gallery" 
+              data-caption="Caption for single image"
+            >
+              <img src="./images/dest/portfolio8.jpg" alt="thumbnail" />
             </a>
           </li>
           <li class="portfolio__item">
-            <a href="/" class="portfolio__link">
-              <img src="./images/dest/portfolio8.jpg" alt="" class="portfolio__img" />
-            </a>
-          </li>
-          <li class="portfolio__item">
-            <a href="/" class="portfolio__link">
-              <img src="./images/dest/portfolio9.jpg" alt="" class="portfolio__img" />
+            <a
+              href="./images/dest/portfolio9.jpg"
+              data-fancybox="gallery" 
+              data-caption="Caption for single image"
+            >
+              <img src="./images/dest/portfolio9.jpg" alt="thumbnail" />
             </a>
           </li>
         </ul>
@@ -151,14 +192,14 @@
           </div>
         </div>
       </div>
-    </section>
+    </div>
 
     <footer class="footer">
       <div class="footer__wrapper">
         <div class="footer__left">
           <div class="footer__left-header">
             <p class="footer__left-title">Гарант-Качество</p>
-            <p class="footer__left-descr">Ремонт и сервисное <span>обслуживание?</span></p>
+            
           </div>
 
           <div class="footer__left-contacts">
