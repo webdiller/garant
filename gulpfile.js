@@ -46,6 +46,7 @@ function styles() {
 function scripts() {
 	return src([
 		'app/libs/jquery/jquery-3.4.1.min.js',
+		'app/libs/fancybox/jquery.fancybox.min.js',
 		'app/js/app.js' // app.js. Always at the end
 		])
 	.pipe(concat('app.min.js'))

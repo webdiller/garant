@@ -26,9 +26,13 @@
 	},
 	"dependencies": {
 		"cleave.js": "^1.5.8",
+		"fancybox": "^3.0.1",
 		"gulp-group-css-media-queries": "^1.2.2",
 		"isotope-layout": "^3.0.6",
+		"jquery": "^3.5.1",
 		"shufflejs": "^5.2.3",
+		"simple-lightbox": "^2.1.0",
+		"simplelightbox": "^2.7.0",
 		"sweetalert2": "^9.10.4"
 	}
 }
