@@ -323,7 +323,6 @@
     }
   }
 }
-
 // breadcrumbs
 .breadcrumbs {
   background: #f1f8fb;
@@ -352,14 +351,10 @@
       font-size: 14px;
       line-height: 20px;
       color: #000000;
-      &::after {
-        content: '>';
-        position: relative;
-        margin: 0 2px 0 4px;
-      }
     }
-    // span {
-    // }
+    .breadcrumbs__list .seprater {
+      margin: 0 4px;
+    }
   }
   &__title {
     display: inline-block;
@@ -606,23 +601,57 @@
     @include media('<=LGdesktop') {
       margin-right: 0;
     }
-    .uslugi__item {
-      &:first-child {
-        flex: 1 1 100%;
-        margin-bottom: 21px;
-        min-height: 445px;
-        padding: 40px 100px 45px 40px;
-        background-color: #f1f8fc;
-        @include media('<=LGdesktop') {
-          margin-bottom: 15px;
+    .uslugi__item:first-child {
+      flex: 1 1 100%;
+      margin-bottom: 21px;
+      min-height: 445px;
+      padding: 40px 100px 45px 40px;
+      background-color: #f1f8fc;
+      @include media('<=LGdesktop') {
+        margin-bottom: 15px;
+      }
+      @include media('<=tablet') {
+        min-height: unset;
+        height: auto;
+      }
+      img {
+        right: 0;
+      }
+      p:first-child {
+        padding: 0;
+        position: relative;
+        z-index: 10;
+        font-family: "RubikDev";
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 30px;
+        text-align: left;
+        max-width: 430px;
+        margin-bottom: 15px;
+        &_white {
+          color: #fff;
         }
-        @include media('<=tablet') {
-          min-height: unset;
-          height: auto;
+        @include media("<=desktop") {
+          font-size: 20px;
+          line-height: 1.55;
         }
-        img {
-          right: 0;
+        @include media("<=tablet") {
+          font-size: 18px;
         }
+      }
+      p:last-child {
+        @include reset-btn();
+        position: relative;
+        display: inline-block;
+        z-index: 10;
+        margin-top: auto;
+        font-family: "RubikDev";
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 17px;
+        text-decoration-line: underline;
+        text-transform: uppercase;
+        color: #47AAE3;
       }
     }
   }
@@ -657,6 +686,25 @@
           margin-bottom: 15px;
         }
       }
+      p {
+        position: relative;
+        z-index: 10;
+        padding: 18px 27px 30px 30px;
+        text-align: center;
+        font-family: "RubikDev";
+        font-weight: 500;
+        font-size: 22px;
+        line-height: 30px;
+        text-align: center;
+        color: #000000;
+        @include media("<=desktop") {
+          font-size: 20px;
+          line-height: 1.55;
+        }
+        @include media("<=tablet") {
+          font-size: 18px;
+        }
+      }
     }
     &_wide {
       width: 100%;
@@ -669,46 +717,6 @@
     }
     &_blue {
       background: #48aee8;
-    }
-  }
-  &__item-title {
-    position: relative;
-    z-index: 10;
-    font-family: 'RubikDev';
-    font-weight: 500;
-    font-size: 24px;
-    line-height: 30px;
-    text-align: left;
-    max-width: 430px;
-    margin-bottom: 15px;
-    &_white {
-      color: #fff;
-    }
-    @include media('<=desktop') {
-      font-size: 20px;
-      line-height: 1.55;
-    }
-    @include media('<=tablet') {
-      font-size: 18px;
-    }
-  }
-  &__item-title-center {
-    position: relative;
-    z-index: 10;
-    padding: 18px 27px 30px 30px;
-    text-align: center;
-    font-family: 'RubikDev';
-    font-weight: 500;
-    font-size: 22px;
-    line-height: 30px;
-    text-align: center;
-    color: #000000;
-    @include media('<=desktop') {
-      font-size: 20px;
-      line-height: 1.55;
-    }
-    @include media('<=tablet') {
-      font-size: 18px;
     }
   }
   &__right {
@@ -730,6 +738,26 @@
           right: 0;
           height: 200%;
         }
+        p:first-child {
+          padding: 0;
+          position: relative;
+          z-index: 10;
+          font-family: "RubikDev";
+          font-weight: 500;
+          font-size: 24px;
+          line-height: 30px;
+          text-align: left;
+          max-width: 430px;
+          margin-bottom: 15px;
+          color: #fff;
+          @include media("<=desktop") {
+            font-size: 20px;
+            line-height: 1.55;
+          }
+          @include media("<=tablet") {
+            font-size: 18px;
+          }
+        }
       }
       &:nth-child(2) {
         min-height: 389px;
@@ -740,6 +768,40 @@
         }
         img {
           right: 0;
+        }
+        p:first-child {
+          padding: 0;
+          position: relative;
+          z-index: 10;
+          font-family: "RubikDev";
+          font-weight: 500;
+          font-size: 24px;
+          line-height: 30px;
+          text-align: left;
+          max-width: 430px;
+          margin-bottom: 15px;
+          color: #fff;
+          @include media("<=desktop") {
+            font-size: 20px;
+            line-height: 1.55;
+          }
+          @include media("<=tablet") {
+            font-size: 18px;
+          }
+        }
+        p:nth-child(4) {
+          @include reset-btn();
+          position: relative;
+          display: inline-block;
+          z-index: 10;
+          margin-top: auto;
+          font-family: "RubikDev";
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 17px;
+          text-decoration-line: underline;
+          text-transform: uppercase;
+          color: #AFF0F0;
         }
       }
       ul li {
@@ -794,20 +856,6 @@
     @include media('<=tablet') {
       margin-top: 20px;
     }
-  }
-  &__link-white {
-    @include reset-btn();
-    position: relative;
-    display: inline-block;
-    z-index: 10;
-    margin-top: auto;
-    font-family: 'RubikDev';
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 17px;
-    text-decoration-line: underline;
-    text-transform: uppercase;
-    color: #aff0f0;
   }
   &__call {
     @include reset-btn();
