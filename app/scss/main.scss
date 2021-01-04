@@ -621,7 +621,7 @@
         padding: 0;
         position: relative;
         z-index: 10;
-        font-family: "RubikDev";
+        font-family: 'RubikDev';
         font-weight: 500;
         font-size: 24px;
         line-height: 30px;
@@ -631,11 +631,11 @@
         &_white {
           color: #fff;
         }
-        @include media("<=desktop") {
+        @include media('<=desktop') {
           font-size: 20px;
           line-height: 1.55;
         }
-        @include media("<=tablet") {
+        @include media('<=tablet') {
           font-size: 18px;
         }
       }
@@ -645,13 +645,13 @@
         display: inline-block;
         z-index: 10;
         margin-top: auto;
-        font-family: "RubikDev";
+        font-family: 'RubikDev';
         font-weight: 500;
         font-size: 14px;
         line-height: 17px;
         text-decoration-line: underline;
         text-transform: uppercase;
-        color: #47AAE3;
+        color: #47aae3;
       }
     }
   }
@@ -691,17 +691,17 @@
         z-index: 10;
         padding: 18px 27px 30px 30px;
         text-align: center;
-        font-family: "RubikDev";
+        font-family: 'RubikDev';
         font-weight: 500;
         font-size: 22px;
         line-height: 30px;
         text-align: center;
         color: #000000;
-        @include media("<=desktop") {
+        @include media('<=desktop') {
           font-size: 20px;
           line-height: 1.55;
         }
-        @include media("<=tablet") {
+        @include media('<=tablet') {
           font-size: 18px;
         }
       }
@@ -742,7 +742,7 @@
           padding: 0;
           position: relative;
           z-index: 10;
-          font-family: "RubikDev";
+          font-family: 'RubikDev';
           font-weight: 500;
           font-size: 24px;
           line-height: 30px;
@@ -750,11 +750,11 @@
           max-width: 430px;
           margin-bottom: 15px;
           color: #fff;
-          @include media("<=desktop") {
+          @include media('<=desktop') {
             font-size: 20px;
             line-height: 1.55;
           }
-          @include media("<=tablet") {
+          @include media('<=tablet') {
             font-size: 18px;
           }
         }
@@ -773,7 +773,7 @@
           padding: 0;
           position: relative;
           z-index: 10;
-          font-family: "RubikDev";
+          font-family: 'RubikDev';
           font-weight: 500;
           font-size: 24px;
           line-height: 30px;
@@ -781,11 +781,11 @@
           max-width: 430px;
           margin-bottom: 15px;
           color: #fff;
-          @include media("<=desktop") {
+          @include media('<=desktop') {
             font-size: 20px;
             line-height: 1.55;
           }
-          @include media("<=tablet") {
+          @include media('<=tablet') {
             font-size: 18px;
           }
         }
@@ -795,13 +795,13 @@
           display: inline-block;
           z-index: 10;
           margin-top: auto;
-          font-family: "RubikDev";
+          font-family: 'RubikDev';
           font-weight: 500;
           font-size: 14px;
           line-height: 17px;
           text-decoration-line: underline;
           text-transform: uppercase;
-          color: #AFF0F0;
+          color: #aff0f0;
         }
       }
       ul li {
@@ -1268,6 +1268,149 @@
     }
     @include media('<=tablet') {
       font-size: 16px;
+    }
+  }
+}
+
+.slider {
+  display: flex;
+  height: 568px;
+  &__main {
+    position: relative;
+    width: calc(75% - 50px);
+    flex: 0 1 calc(75% - 50px);
+    margin-right: 50px;
+  }
+  &__main-img-wrapper {
+    position: relative;
+    height: 100%;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      visibility: hidden;
+      z-index: -1;
+      transition: all .3s ease;
+      background-color: rgb(227, 227, 227);
+    }  
+    &.active {
+      &::after {
+        opacity: 1;
+        visibility: visible;
+        z-index: 10;
+      }
+    }
+  }
+  &__main-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  
+  }
+  &__arrows {
+    width: 100%;
+  }
+  &__arrow {
+    @include reset-btn();
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60px;
+    height: 60px;
+    background-color: rgba(71, 170, 227, 0.73);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+    &-left {
+      left: 10px;
+      &::before {
+        content: '';
+        position: absolute;
+        width: 25px;
+        height: 18px;
+        right: 50%;
+        top: 50%;
+        transform: translate(50%, -50%) rotate(180deg);
+        background: url('../images/dest/arrow-white.svg') no-repeat center / contain;
+      }
+    }
+    &-right {
+      right: 10px;
+      &::before {
+        content: '';
+        position: absolute;
+        width: 25px;
+        height: 18px;
+        right: 50%;
+        top: 50%;
+        transform: translate(50%, -50%);
+        background: url('../images/dest/arrow-white.svg') no-repeat center / contain;
+      }
+    }
+  }
+  &__thumbnails {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &__thumb-wrapper {
+    position: relative;
+    flex: 1 1 auto;
+    margin-bottom: 20px;
+    transition: all .3s ease;
+    border: 1px solid transparent;
+    overflow: hidden;
+    &:hover {
+      border-color: #11c2c2;
+      cursor: pointer;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      visibility: hidden;
+      z-index: -1;
+      transition: all .3s ease;
+      background-color: rgb(227, 227, 227);
+    }  
+    &.active {
+      &::after {
+        opacity: 1;
+        visibility: visible;
+        z-index: 10;
+      }
+    }
+    &.current {
+      border-color: #11c2c2;
+    }
+  }
+  &__thumb-img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 1;
+    transition: all 0.3s ease;
+    transform: scale(1.05);
+    &:hover {
+      transform: scale(1);
+    }
+    &.active {
+      opacity: 0;
     }
   }
 }
