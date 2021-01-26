@@ -1275,17 +1275,34 @@
 .slider {
   display: flex;
   height: 568px;
+  @include media('<=desktop') {
+    flex-direction: column;
+    height: auto;
+  }
   &__main {
     position: relative;
     width: calc(75% - 50px);
     flex: 0 1 calc(75% - 50px);
     margin-right: 50px;
+    @include media('<=desktop') {
+      width: 100%;
+      flex: 0 1 100%;
+      margin-right: 0;
+      height: 60vh;
+      margin-bottom: 15px;
+    }
+    @include media('<=tablet') {
+      height: 50vh;
+    }
+    @include media('<=phone') {
+      height: 40vh;
+    }
   }
   &__main-img-wrapper {
     position: relative;
     height: 100%;
     &::after {
-      content: "";
+      content: '';
       position: absolute;
       top: 0;
       right: 0;
@@ -1294,9 +1311,9 @@
       opacity: 0;
       visibility: hidden;
       z-index: -1;
-      transition: all .3s ease;
+      transition: all 0.3s ease;
       background-color: rgb(227, 227, 227);
-    }  
+    }
     &.active {
       &::after {
         opacity: 1;
@@ -1308,7 +1325,7 @@
   &__main-img {
     width: 100%;
     height: 100%;
-    object-fit: cover;  
+    object-fit: cover;
   }
   &__arrows {
     width: 100%;
@@ -1325,6 +1342,16 @@
     justify-content: center;
     align-items: center;
     z-index: 20;
+    transition: all 0.3s ease;
+    @include media('<=phone') {
+      width: 35px;
+      height: 35px;
+    }
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: rgba(31, 31, 31, 0.93);
+    }
     &-left {
       left: 10px;
       &::before {
@@ -1336,6 +1363,10 @@
         top: 50%;
         transform: translate(50%, -50%) rotate(180deg);
         background: url('../images/dest/arrow-white.svg') no-repeat center / contain;
+        @include media('<=phone') {
+          width: 15px;
+          height: 8px;
+        }
       }
     }
     &-right {
@@ -1349,6 +1380,10 @@
         top: 50%;
         transform: translate(50%, -50%);
         background: url('../images/dest/arrow-white.svg') no-repeat center / contain;
+        @include media('<=phone') {
+          width: 15px;
+          height: 8px;
+        }
       }
     }
   }
@@ -1357,23 +1392,39 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    @include media('<=desktop') {
+      width: 100%;
+      flex: 0 1 100%;
+      flex-direction: row;
+      height: 20vh;
+    }
+    @include media('<=phone') {
+      height: 10vh;
+    }
   }
   &__thumb-wrapper {
     position: relative;
     flex: 1 1 auto;
     margin-bottom: 20px;
-    transition: all .3s ease;
+    transition: all 0.3s ease;
     border: 1px solid transparent;
     overflow: hidden;
+    @include media('<=desktop') {
+      margin-bottom: 0;
+      margin-right: 15px;
+    }
     &:hover {
       border-color: #11c2c2;
       cursor: pointer;
     }
     &:last-child {
       margin-bottom: 0;
+      @include media('<=desktop') {
+        margin-right: 0;
+      }
     }
     &::after {
-      content: "";
+      content: '';
       position: absolute;
       top: 0;
       right: 0;
@@ -1382,9 +1433,9 @@
       opacity: 0;
       visibility: hidden;
       z-index: -1;
-      transition: all .3s ease;
+      transition: all 0.3s ease;
       background-color: rgb(227, 227, 227);
-    }  
+    }
     &.active {
       &::after {
         opacity: 1;
@@ -1405,7 +1456,7 @@
     object-fit: cover;
     opacity: 1;
     transition: all 0.3s ease;
-    transform: scale(1.05);
+    transform: scale(1.02);
     &:hover {
       transform: scale(1);
     }
@@ -1785,7 +1836,7 @@
     height: 100%;
     object-fit: cover;
     transition: all 0.3s ease;
-    transform: scale(1.05);
+    transform: scale(1.02);
     &:hover {
       transform: scale(1);
     }
